@@ -1,0 +1,13 @@
+for i in range(int(input())):
+    moves = 0
+    crystals = [0,0,0]
+    x = int(input())
+    while crystals[0]<=x and crystals[1]<=x and crystals[2]<=x:
+        for k in range(len(crystals)-1):
+            if crystals[k] >= crystals[k+1]/2:
+                if crystals[k]*2!=0:
+                    crystals[k] = crystals[k]*2
+                else:
+                    crystals[k] = crystals[k]+1
+                moves+=1
+    print(moves-1)

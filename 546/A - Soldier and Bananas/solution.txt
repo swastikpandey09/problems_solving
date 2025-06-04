@@ -1,0 +1,5 @@
+cost,money,bananas = map(int,input().split())
+banana = []
+for i in range(1,bananas+1):
+    banana.append(i*cost)
+print(sum(banana)-money if sum(banana)-money >=0 else 0)

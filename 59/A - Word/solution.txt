@@ -1,0 +1,10 @@
+arr  = []
+s = input()
+for i in s:
+    arr.append(i.islower())
+if arr.count(True)>arr.count(False):
+    print(s.lower())
+if arr.count(True)<arr.count(False):
+    print(s.upper())
+if arr.count(True)==arr.count(False):
+    print(s.lower())

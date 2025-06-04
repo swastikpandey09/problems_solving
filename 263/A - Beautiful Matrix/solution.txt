@@ -1,0 +1,14 @@
+arr = []
+for _ in range(5):
+    arr.append(list(map(int, input().split())))
+start = None
+for i in range(5):
+    for j in range(5):
+        if arr[i][j] == 1:
+            start = (i, j)
+            break
+    if start:
+        break
+end = (2, 2)
+moves = abs(start[0] - end[0]) + abs(start[1] - end[1])
+print(moves)

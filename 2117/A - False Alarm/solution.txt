@@ -1,0 +1,19 @@
+for _ in range(int(input())):
+    doorsa, times = map(int, input().split())
+    doors = list(map(int, input().split()))
+    ind = 0
+ 
+    for i in doors:
+        if i == 1:
+            break
+        ind += 1
+ 
+    sec_needed = doorsa - ind
+    if sec_needed <= times:
+        print('YES')
+    else:
+        rema = doors[ind + times:]
+        if 1 in rema:
+            print('NO')
+        else:
+            print('YES')

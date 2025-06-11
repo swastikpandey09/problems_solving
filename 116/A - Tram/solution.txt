@@ -1,0 +1,9 @@
+cap = 0
+caps = []
+n = int(input())
+for i in range(n):
+	s,q = map(int,input().split())
+	cap-=s
+	cap+=q
+	caps.append(cap)
+print(max(caps))

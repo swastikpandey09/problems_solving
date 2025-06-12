@@ -1,0 +1,19 @@
+def get_knight_moves(x, y, a, b):
+    return {
+        (x + a, y + b), (x + a, y - b),
+        (x - a, y + b), (x - a, y - b),
+        (x + b, y + a), (x + b, y - a),
+        (x - b, y + a), (x - b, y - a),
+    }
+ 
+t = int(input())
+for _ in range(t):
+    a, b = map(int, input().split())
+    kx, ky = map(int, input().split())
+    qx, qy = map(int, input().split())
+ 
+    king_moves = get_knight_moves(kx, ky, a, b)
+    queen_moves = get_knight_moves(qx, qy, a, b)
+ 
+    fork_positions = king_moves & queen_moves
+    print(len(fork_positions))

@@ -1,0 +1,14 @@
+import math
+ 
+t = int(input())
+for _ in range(t):
+    s = input()
+    n = int(s)
+    root = int(math.isqrt(n))
+ 
+    if root * root != n:
+        print(-1)
+        continue
+    a = int(root/2)
+    b = root-a
+    print(f"{a} {b}")

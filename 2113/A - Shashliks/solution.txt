@@ -1,0 +1,25 @@
+def solve():
+    k, a, b, x, y = map(int, input().split())
+    if x > y:
+        a, b = b, a
+        x, y = y, x
+ 
+    n = 0
+    if k >= a:
+        n = (k - a) // x + 1
+ 
+    k -= n * x
+ 
+    nn = 0
+    if k >= b:
+        nn = (k - b) // y + 1
+ 
+    print(n + nn)
+ 
+def main():
+    t = int(input())
+    for _ in range(t):
+        solve()
+ 
+if __name__ == "__main__":
+    main()

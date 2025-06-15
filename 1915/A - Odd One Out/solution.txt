@@ -1,0 +1,9 @@
+for _ in range(int(input())):
+    desc = list(map(int, input().split()))
+    
+    if desc[0] == desc[1]:
+        print(desc[2])
+    elif desc[0] == desc[2]:
+        print(desc[1])
+    else:
+        print(desc[0])

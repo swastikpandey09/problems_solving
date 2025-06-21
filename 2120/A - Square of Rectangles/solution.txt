@@ -1,0 +1,35 @@
+import math
+for i in range(int(input())):
+    l1, b1, l2, b2, l3, b3 = map(int, input().split())
+    total = l1 * b1 + l2 * b2 + l3 * b3
+    s_int = math.isqrt(total)
+    if s_int * s_int != total:
+        print("NO")
+        continue
+    S = s_int
+ 
+    if b1 == S and b2 == S and b3 == S and (l1 + l2 + l3 == S):
+        print("YES")
+        continue
+ 
+    if l1 == S and l2 == S and l3 == S and (b1 + b2 + b3 == S):
+        print("YES")
+        continue
+ 
+    if (b1 == b2 and l1 + l2 == S and l3 == S and b3 == S - b1) or (b1 == b3 and l1 + l3 == S and l2 == S and b2 == S - b1) or (b2 == b3 and l2 + l3 == S and l1 == S and b1 == S - b2):
+        print("YES")
+        continue
+ 
+    if (l1 == l2 and b1 + b2 == S and b3 == S and l3 == S - l1) or (l1 == l3 and b1 + b3 == S and b2 == S and l2 == S - l1) or (l2 == l3 and b2 + b3 == S and b1 == S and l1 == S - l2):
+        print("YES")
+        continue
+ 
+    if (l1 == S and b2 == S - b1 and b3 == S - b1 and l2 + l3 == S) or (l2 == S and b1 == S - b2 and b3 == S - b2 and l1 + l3 == S) or (l3 == S and b1 == S - b3 and b2 == S - b3 and l1 + l2 == S):
+        print("YES")
+        continue
+ 
+    if (b1 == S and l2 == S - l1 and l3 == S - l1 and b2 + b3 == S) or (b2 == S and l1 == S - l2 and l3 == S - l2 and b1 + b3 == S) or (b3 == S and l1 == S - l3 and l2 == S - l3 and b1 + b2 == S):
+        print("YES")
+        continue
+ 
+    print("NO")

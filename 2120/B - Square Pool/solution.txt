@@ -1,0 +1,40 @@
+import sys
+ 
+def solve():
+    data = sys.stdin.read().split()
+    t = int(data[0])
+    ind = 1
+    array = []
+    for _ in range(t):
+        n = int(data[ind])
+        s = int(data[ind + 1])
+        ind += 2
+        ball = []
+        for _ in range(n):
+            dsx = int(data[ind])
+            dsy = int(data[ind + 1])
+            xO = int(data[ind + 2])
+            yO = int(data[ind + 3])
+            ind += 4
+            ball.append((dsx, dsy, xO, yO))
+        
+        not_potted = 0
+        for (mx, my, xO, yO) in ball:
+            potted = False
+            for p in [0, 1]:
+                for q in [0, 1]:
+                    if (mx * (p * s - xO) - my * (q * s - yO)) % (2 * s) == 0:
+                        potted = True
+                        break
+                if potted:
+                    break
+            if not potted:
+                not_potted += 1
+        potted_count = n - not_potted
+        array.append(str(potted_count))
+    
+    for I in array:
+        print(I)
+ 
+if __name__ == "__main__":
+    solve()

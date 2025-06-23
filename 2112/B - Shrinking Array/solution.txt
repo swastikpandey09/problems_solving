@@ -1,0 +1,59 @@
+#USER: conquerer_of_tourist
+import sys
+input = sys.stdin.readline
+    #n = int(input())  # Read an integer
+    #arr = list(map(int, input().split()))
+    #s = input().strip()  # Read a string
+#write code here
+for i in range(int(input())):
+    n = int(input())
+    a = list(map(int, input().split()))
+ 
+    o = False
+    for j in range(n - 1):
+        if abs(a[j] - a[j + 1]) <= 1:
+            #print(abs(a[j] - a[j + 1]))
+            o = True
+            break
+        #print(abs(a[j] - a[j + 1]))
+    if o:
+        print(0)
+        continue
+    if n < 3:
+        print(-1)
+        continue
+ 
+    x = False
+    for j in range(n - 2):
+        s = sorted((a[j], a[j + 1]))
+        #print(s)
+        l = s[0]
+        #print(l)
+        r = s[1]
+        #print(r)
+        p = a[j + 2] - 1
+        #print(p)
+        q = a[j + 2] + 1
+        #print(q)
+        if max(l, p) <= min(r, q):
+            #print(max(l,p))
+            #print(min(r,q))
+            x = True
+            break
+ 
+        s = sorted((a[j + 1], a[j + 2]))
+        #print(s)
+        l = s[0]
+        #print(l)
+        r = s[1]
+        #print(r)
+        p = a[j] - 1
+        #print(p)
+        q = a[j] + 1
+        #print(q)
+        if max(l, p) <= min(r, q):
+            x = True
+            #print(x)
+            break
+ 
+    print(1 if x else -1)

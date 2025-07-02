@@ -1,0 +1,14 @@
+import sys
+input = sys.stdin.readline
+ 
+def inp():
+    return int(input())
+ 
+def inlt():
+    return list(map(int, input().split()))
+ 
+n = inp()
+lists = inlt()
+average = sum(lists) / (len(lists) * 100)
+average = average*100
+print(f"{average:.12f}")

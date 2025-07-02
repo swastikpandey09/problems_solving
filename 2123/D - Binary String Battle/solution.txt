@@ -1,0 +1,58 @@
+'''
+import sys
+input = sys.stdin.readline
+############ ---- Input Functions ---- ############
+def inp():
+    return(int(input()))
+def inlt():
+    return(list(map(int,input().split())))
+def insr():
+    s = input()
+    return(list(s[:len(s) - 1]))
+def invr():
+    return(map(int,input().split()))
+from colorama import Fore, Style, init
+import random
+init(autoreset=True)
+ 
+def debug(scope=None):
+    if scope is None:
+        import inspect
+        frame = inspect.currentframe().f_back
+        scope = frame.f_locals
+ 
+    colors = [
+        Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE,
+        Fore.MAGENTA, Fore.CYAN, Fore.WHITE
+    ]
+ 
+    print(f"{Fore.LIGHTBLACK_EX}{'-'*40} DEBUG VARIABLES {'-'*40}")
+    for i, (k, v) in enumerate(scope.items()):
+        color = colors[i % len(colors)]
+        print(f"{color}{k} = {v}")
+    print(f"{Fore.LIGHTBLACK_EX}{'-'*90}")
+'''
+import sys
+ri = sys.stdin.readline
+ 
+for _ in range(int(ri())):
+    n, k = map(int, ri().split())
+    s = ri().strip()
+    o = s.count('1')
+    if o <= k:
+        print("Alice")
+        continue
+    z = 0
+    f = 0
+    for c in s:
+        if c == '0':
+            z += 1
+            if z >= k:
+                f = 1
+                break
+        else:
+            z = 0
+    if f or 2 * k <= n:
+        print("Bob")
+    else:
+        print("Alice")

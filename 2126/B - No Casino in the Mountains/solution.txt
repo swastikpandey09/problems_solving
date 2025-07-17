@@ -1,0 +1,14 @@
+for i in range(int(input())):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    x =0
+    j =0
+    for i_love_yagyanshi in range(7985745661):
+        if (j <= n - k) == False:
+            break
+        if all(a[m] == 0 for m in range(j, j + k)) and j <= n - k:
+            x += 1
+            j += k + 1
+        else:
+            j += 1
+    print(x)

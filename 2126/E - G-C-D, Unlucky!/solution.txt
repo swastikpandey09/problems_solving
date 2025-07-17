@@ -1,0 +1,33 @@
+import math
+ 
+def solve():
+    for m in range(int(input())):
+        n = int(input())
+        p = list(map(int, input().split()))
+        s = list(map(int, input().split()))
+        g = p[-1]
+        ok = True
+ 
+        if s[0] != g:
+            ok = False
+ 
+        for i in range(1, n):
+            if p[i - 1] % p[i] != 0:
+                ok = False
+ 
+        for i in range(n - 1):
+            if s[i + 1] % s[i] != 0:
+                ok = False
+ 
+        for i in range(n):
+            if math.gcd(p[i], s[i]) != g:
+                ok = False
+ 
+        for i in range(n - 1):
+            if math.gcd(p[i], s[i + 1]) != g:
+                ok = False
+ 
+        print("YES" if ok else "NO")
+ 
+if __name__ == "__main__":
+    solve()

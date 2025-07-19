@@ -1,0 +1,7 @@
+for i in range(int(input())):
+    n = int(input())
+    p = [(*map(int, input().split()), i+1) for i in range(n)]
+    p.sort()
+    l, r = sorted(p[:n//2], key=lambda x: x[1]), sorted(p[n//2:], key=lambda x: -x[1])
+    for a, b in zip(l, r):
+        print(a[2], b[2])

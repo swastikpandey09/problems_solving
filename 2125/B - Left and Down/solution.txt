@@ -1,0 +1,41 @@
+'''
+from math import lcm
+for i in range(int(input())):
+    ms = []
+    a, b, k = map(int, input().split())
+    if lcm(a, b) <= k:
+        if int(abs(a % lcm(a, b) - b % lcm(a, b))) < k:
+            print(2)
+        else:
+            print(1)
+    else:
+        if k > 1:
+            for i in range(1, k):
+                if a % (k - i) == 0 and b % (k - i) == 0:
+                    m = 1
+                    ms.append(m)
+                    break
+                else:
+                    x = a % (k - i) == 0
+                    y = b % (k - i) == 0
+                    if (not x and y) or (x and not y):
+                        m = 2
+                        ms.append(m)
+                    else:
+                        m = 3
+                        ms.append(m)
+            print(min(ms))
+        else:
+            print(min(a, b))
+'''
+from math import gcd
+ 
+for i in range(int(input())):
+    a, b, k = map(int, input().split())
+    g = gcd(a, b)
+    e = a // g
+    f = b // g
+    if e <= k and f <= k:
+        print(1)
+    else:
+        print(2)

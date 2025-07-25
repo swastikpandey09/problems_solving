@@ -1,1 +1,6 @@
-for i in range(int(input())):   print(''.join(sorted(input())[::-1]))
+attractors_ki_ma_ka_bhosda_bahanchod_russian_sala_kutta = input
+attractors_ki_ma_ka_choda = range
+for i in attractors_ki_ma_ka_choda(int(attractors_ki_ma_ka_bhosda_bahanchod_russian_sala_kutta())):
+    attractors_ka_land = attractors_ki_ma_ka_bhosda_bahanchod_russian_sala_kutta()
+    attractors_ki_bahan_ki_choot = sorted
+    print(''.join(attractors_ki_bahan_ki_choot(attractors_ka_land)[::-1]))
